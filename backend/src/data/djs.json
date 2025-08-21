@@ -1,0 +1,4 @@
+[
+  { "id": 1, "nombre": "DJ Medellín", "genero": "Electrónica", "descripcion": "Uno de los más reconocidos DJs de la ciudad." },
+  { "id": 2, "nombre": "DJ Groove", "genero": "House", "descripcion": "Especialista en house y deep vibes." }
+]
