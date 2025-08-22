@@ -1,4 +1,62 @@
 [
-  { "id": 1, "nombre": "DJ Medellín", "genero": "Electrónica", "descripcion": "Uno de los más reconocidos DJs de la ciudad." },
-  { "id": 2, "nombre": "DJ Groove", "genero": "House", "descripcion": "Especialista en house y deep vibes." }
+  {
+    "id": 1,
+    "nombre": "DJ Medellín",
+    "genero": "Electrónica",
+    "descripcion": "Uno de los más reconocidos DJs de la ciudad."
+  },
+  {
+    "id": 2,
+    "nombre": "DJ Groove",
+    "genero": "House",
+    "descripcion": "Especialista en house y deep vibes."
+  },
+  {
+    "id": 3,
+    "nombre": "DJ Tropical",
+    "genero": "Reggaetón",
+    "descripcion": "Mezclas calientes para la pista de baile."
+  },
+  {
+    "id": 4,
+    "nombre": "DJ Nightfall",
+    "genero": "Trance",
+    "descripcion": "Experiencia cósmica en cada set."
+  },
+  {
+    "id": 5,
+    "nombre": "DJ Bassline",
+    "genero": "Drum & Bass",
+    "descripcion": "Potentes bajos y ritmos rápidos."
+  },
+  {
+    "id": 6,
+    "nombre": "DJ Sunset",
+    "genero": "Chillout",
+    "descripcion": "Perfecto para relajarse al atardecer."
+  },
+  {
+    "id": 7,
+    "nombre": "DJ Firebeat",
+    "genero": "Techno",
+    "descripcion": "Energía y fuerza en cada sesión."
+  },
+  {
+    "id": 8,
+    "nombre": "DJ Luna",
+    "genero": "Deep House",
+    "descripcion": "Vibras nocturnas y sonidos profundos."
+  },
+  {
+    "id": 9,
+    "nombre": "DJ Vortex",
+    "genero": "Electrónica",
+    "descripcion": "Innovación y creatividad en la pista de baile."
+  },
+  {
+    "id": 10,
+    "nombre": "DJ Echo",
+    "genero": "Progressive",
+    "descripcion": "Sets progresivos que mantienen la energía."
+  }
 ]
