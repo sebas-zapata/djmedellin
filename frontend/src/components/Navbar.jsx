@@ -32,18 +32,52 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-black text-white p-4 flex gap-6 justify-center">
-      {links.map((link, index) => (
-        <Link
-          key={link.to}
-          to={link.to}
-          className={`px-4 py-2 rounded-md transition-all duration-300 hover:bg-gray-700 hover:scale-110 transform ${
-            activeIndex === index ? "bg-gray-900 scale-110" : ""
-          }`}
-        >
-          {link.label}
+    <nav
+      className="navbar navbar-expand-lg navbar-dark shadow-sm"
+      style={{
+        background: "linear-gradient(to right, #a855f7, #ec4899, #ef4444)",
+      }}
+    >
+      <div className="container">
+        {/* Logo */}
+        <Link to="/" className="navbar-brand fw-bold">
+          🎧 DJ Events
         </Link>
-      ))}
+
+        {/* Botón responsive */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Links */}
+        <div
+          className="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav">
+            {links.map((link, index) => (
+              <li key={link.to} className="nav-item">
+                <Link
+                  to={link.to}
+                  className={`nav-link px-3 ${
+                    activeIndex === index ? "active fw-bold" : ""
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 }

@@ -1,7 +1,7 @@
 const express = require("express"); 
 // Importa Express para usar su sistema de routing
 
-const { getEventos, getEventoById } = require("../controllers/eventosController"); 
+const { getEventos, getEventoById, createEvento, updateEvento, deleteEvento } = require("../controllers/eventosController"); 
 // Importa los controladores que contienen la lógica de cada endpoint
 
 const router = express.Router(); 
@@ -12,12 +12,19 @@ const router = express.Router();
 // --------------------
 
 // GET /api/eventos
-// Retorna todos los eventos de la base de datos
 router.get("/", getEventos);
 
 // GET /api/eventos/:id
-// Retorna un evento específico según su ID
 router.get("/:id", getEventoById);
+
+// POST /api/eventos
+router.post("/", createEvento);
+
+// PUT /api/eventos/:id
+router.put("/:id", updateEvento);
+
+// DELETE /api/eventos/:id
+router.delete("/:id", deleteEvento);
 
 // Exporta el router para usarlo
 module.exports = router;
