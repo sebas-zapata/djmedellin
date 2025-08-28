@@ -23,7 +23,6 @@ export default function ContactoForm() {
   return (
     <div className="container my-5 d-flex justify-content-center">
       <div className="card shadow-lg p-4 w-100" style={{ maxWidth: "500px" }}>
-        <h3 className="text-center mb-4 text-primary">Contacto</h3>
 
         <form onSubmit={handleSubmit}>
           {/* Nombre */}

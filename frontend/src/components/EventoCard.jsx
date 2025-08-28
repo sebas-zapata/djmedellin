@@ -1,27 +1,35 @@
 export default function EventoCard({ evento }) {
   return (
     <div
-      className="card bg-danger text-white shadow-lg border-0 rounded-4 h-100"
-      style={{
-        transition: "transform 0.3s",
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-      onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+      className="evento-card card shadow-lg border-0 h-100"
     >
-      <div className="card-body">
-        <h2 className="card-title fs-4 fw-bold mb-2">{evento.nombre}</h2>
-        <p className="card-text small opacity-75">
-          <strong>Fecha del evento:</strong>{" "}
+      <div className="card-body p-4">
+        {/* Título */}
+        <h2 className="card-title fs-4 fw-bold mb-3 text-uppercase text-danger">
+          {evento.nombre}
+        </h2>
+
+        {/* Fecha */}
+        <p className="card-text mb-2 text-light small">
+          <i className="bi bi-calendar-event me-2 text-light"></i>
+          <strong>Fecha:</strong>{" "}
           {new Date(evento.fecha).toLocaleDateString("es-ES", {
-            weekday: "long", // día de la semana
+            weekday: "long",
             day: "numeric",
             month: "long",
             year: "numeric",
           })}
         </p>
 
-        <p className="card-text small opacity-75">{evento.lugar}</p>
-        <p className="card-text small opacity-75">
+        {/* Lugar */}
+        <p className="card-text mb-2 text-light small">
+          <i className="bi bi-geo-alt me-2 text-success"></i>
+          {evento.lugar}
+        </p>
+
+        {/* Creado */}
+        <p className="card-text mb-2 text-light small">
+          <i className="bi bi-clock-history me-2 text-warning"></i>
           <strong>Creado:</strong>{" "}
           {new Date(evento.createdAt).toLocaleDateString("es-ES", {
             day: "numeric",
@@ -29,7 +37,10 @@ export default function EventoCard({ evento }) {
             year: "numeric",
           })}
         </p>
-        <p className="card-text small opacity-75">
+
+        {/* Actualizado */}
+        <p className="card-text mb-0 text-light small">
+          <i className="bi bi-arrow-repeat me-2 text-info"></i>
           <strong>Última actualización:</strong>{" "}
           {new Date(evento.updatedAt).toLocaleDateString("es-ES", {
             day: "numeric",

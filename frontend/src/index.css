@@ -1,0 +1,42 @@
+.evento-card {
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.evento-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.evento-card .card-title {
+  letter-spacing: 1px;
+  color: #17a2b8 !important;
+}
+
+.evento-card .card-text {
+  font-size: 0.9rem;
+}
+
+/* 🔵 Tarjeta de DJ */
+.dj-card {
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dj-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+.dj-card .card-title {
+  letter-spacing: 1px;
+  color: #17a2b8 !important;
+}
+
+.dj-card .card-text {
+  font-size: 0.9rem;
+}

@@ -1,24 +1,48 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import DjCard from "../components/DjCard";
+import { getDjs } from "../services/djService";
 
 export default function Djs() {
   const [djs, setDjs] = useState([]);
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/cantantes")
-      .then(res => setDjs(res.data))
-      .catch(err => console.error(err));
+    const fetchDjs = async () => {
+      try {
+        setCargando(true);
+        const data = await getDjs();
+        setDjs(data);
+      } catch (error) {
+        console.error("Error al cargar DJs:", error);
+      } finally {
+        setCargando(false);
+      }
+    };
+    fetchDjs();
   }, []);
 
-  return (
-    <div className="container py-5">
-      {/* Título */}
-      <h1 className="text-center mb-5 text-dark fw-bold">
-        Cantantes de DJs {djs.length}
-      </h1>
+return (
+  <div className="container py-5">
+    {/* Título */}
+    <h1 className="text-center mb-5 fw-bold" style={{ color: "#17a2b8" }}>
+      {cargando ? (
+        <div className="d-flex flex-column align-items-center">
+          {/* Spinner */}
+          <div className="spinner-border text-info" role="status">
+            <span className="visually-hidden">Cargando...</span>
+          </div>
+          <p className="mt-3">Cargando cantantes...</p>
+        </div>
+      ) : (
+        <>
+          <i className="bi bi-music-note-beamed"></i> Cantantes de DJs {djs.length}
+        </>
+      )}
+    </h1>
 
-      {/* Grid de eventos */}
+    {/* Grid de DJs */}
+    {!cargando && (
       <div className="row g-4">
         {djs.map((dj) => (
           <div key={dj.id} className="col-12 col-sm-6 col-md-4 col-lg-4">
@@ -28,6 +52,8 @@ export default function Djs() {
           </div>
         ))}
       </div>
-    </div>
-  );
+    )}
+  </div>
+);
+
 }
