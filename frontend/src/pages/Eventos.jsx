@@ -15,8 +15,8 @@ export default function Eventos() {
   return (
     <div className="container py-5">
       {/* Título */}
-      <h1 className="text-center mb-5 text-secondary fw-bold">
-        🎧 Próximos Eventos de DJs
+      <h1 className="text-center mb-5 text-dark fw-bold">
+        🎧 Próximos Eventos de DJs {eventos.length}
       </h1>
 
       {/* Grid de eventos */}
