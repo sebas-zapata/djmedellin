@@ -9,3 +9,14 @@ export const getEventos = async () => {
   const response = await axios.get(API_URL);
   return response.data;
 };
+
+// Servicio para obtener un evento por su ID
+export const getEventoById = async (id) => {
+  try {
+    const response = await axios.get(`${API_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching event by ID:', error);
+    throw error;
+  }
+};
