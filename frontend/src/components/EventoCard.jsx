@@ -1,7 +1,17 @@
+import { useNavigate } from 'react-router-dom';
+
 export default function EventoCard({ evento }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/eventos/${evento.id}`);
+  };
+
   return (
     <div
       className="evento-card card shadow-lg border-0 h-100"
+      onClick={handleClick}
+      style={{ cursor: 'pointer' }}
     >
       <div className="card-body p-4">
         {/* Título */}

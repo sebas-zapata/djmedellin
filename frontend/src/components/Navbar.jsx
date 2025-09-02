@@ -26,10 +26,11 @@ export default function Navbar() {
   }, [location]);
 
   const links = [
-    { to: "/", label: "Inicio" },
-    { to: "/djs", label: "DJs" },
-    { to: "/eventos", label: "Eventos" },
-    { to: "/contacto", label: "Contacto" },
+    { to: "/", label: "Inicio", icon: "house-door" },
+    { to: "/djs", label: "DJs", icon: "person-video2" },
+    { to: "/eventos", label: "Eventos", icon: "calendar-event" },
+    { to: "/revista", label: "Revista", icon: "journal-richtext" },
+    { to: "/contacto", label: "Contacto", icon: "envelope" },
   ];
 
   return (
@@ -77,6 +78,7 @@ export default function Navbar() {
                 activeIndex === index ? "active fw-bold" : ""
               }`}
             >
+              <i className={`bi bi-${link.icon} me-2`}></i>
               {link.label}
             </Link>
           </li>
