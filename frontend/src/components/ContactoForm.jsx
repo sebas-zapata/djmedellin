@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { enviarMensaje } from "../services/contactoService";
 
 export default function ContactoForm() {
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
@@ -12,18 +13,17 @@ export default function ContactoForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/api/contacto", form);
-      setSuccess("✅ Mensaje enviado correctamente");
+      const response = await enviarMensaje(form);
+      setSuccess("Mensaje enviado correctamente");
       setForm({ nombre: "", email: "", mensaje: "" });
     } catch (err) {
-      setSuccess("❌ Error al enviar el mensaje");
+      setSuccess("Error al enviar el mensaje");
     }
   };
 
   return (
     <div className="container my-5 d-flex justify-content-center">
       <div className="card shadow-lg p-4 w-100" style={{ maxWidth: "500px" }}>
-
         <form onSubmit={handleSubmit}>
           {/* Nombre */}
           <div className="mb-3">
