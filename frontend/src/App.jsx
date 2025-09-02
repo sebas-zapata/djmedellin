@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Djs from "./pages/Djs";
 import Eventos from "./pages/Eventos";
 import Contacto from "./pages/Contacto";
+import Audio from "./components/Audio";
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -16,7 +18,12 @@ export default function App() {
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/contacto" element={<Contacto />} />
         </Routes>
+        <div className="demostracion">
+          <Audio />
+        </div>
+        
       </div>
+      <Footer />
     </div>
   );
 }

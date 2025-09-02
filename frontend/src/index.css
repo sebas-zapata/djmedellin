@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .evento-card {
   border-radius: 1rem;
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
@@ -39,4 +43,14 @@
 
 .dj-card .card-text {
   font-size: 0.9rem;
+}
+
+
+.demostracion{
+  margin-bottom: 40px;
+  overflow: hidden;
+  height: 20dvi;
+  background-color: #0d0d0d;
+  display: flex;
+  align-items: center;
 }
